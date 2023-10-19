@@ -1,0 +1,25 @@
+:root{
+    background: black;
+}
+.gal_contenedor{
+    background: black;
+}
+.gal_section{
+    display: flex;
+    margin: 28vh auto;
+    width: 142.5vh;
+    height: 44vh;
+}
+.gal_section .gal_img{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+.gal_section .gal_img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}

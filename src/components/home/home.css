@@ -1,0 +1,42 @@
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Ancho de la barra lateral y el contenido */
+    grid-template-rows: 150px 1fr; /* Altura de la cabecera, contenido y pie de página */
+    grid-template-areas:
+      "header header"
+      "barralat content"
+      "footer footer";
+    min-height: 100vh;
+    gap: 1px; /* Espacio entre las áreas del grid */
+    background-color: #f0f0f0; /* Color de fondo general */
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: #7a0a0a;
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+    
+  }
+  
+  .barralat {
+    grid-area: barralat;
+    background-color: #5a5959;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .content {
+    grid-area: content;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .footer {
+    grid-area: footer;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+  }
