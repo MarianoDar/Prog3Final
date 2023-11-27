@@ -4,7 +4,7 @@ import Menu from '../menu/Menu';
 import Barralat from '../barralat/Barralat';
 import Pie from '../pie/Pie';
 import './home.css';
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 export default function () {
 
@@ -20,15 +20,11 @@ export default function () {
         'Pérdida de dinero en impuestos',
         'Dinero "sucio"',
       ];
-
-      useEffect(() => {
-        document.title = 'TP Final';
-      }, []);
-
+      
       return (
     <div className="container">
           <div className="header">
-            <Header titulo={"Estudio Contable"} tituloo={"Daruich Mariano"} />
+            <Header titulo={"Estudio Contable"} tituloo={"MARCHETTI CARLOS ALBERTO"} />
           </div>
           <div className="content">
             <h2>Haznos saber que nos visitaste!</h2>
@@ -41,6 +37,7 @@ export default function () {
             />
           </div>
           <div className="footer">
+            <Link to = "/miembros">Calculadora</Link>
             <Pie />
           </div>
         </div>

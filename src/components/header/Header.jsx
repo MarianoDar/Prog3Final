@@ -5,7 +5,7 @@ export default function Header({titulo, tituloo}) {
         <div>
           <header className='cabecera'>
             <h1 style={{ textAlign: 'center' }}>{titulo}</h1>
-            <h3 style={{ textAlign: 'center'} }>{tituloo}</h3>
+            <h4 style={{ textAlign: 'center'} }>{tituloo}</h4>
           </header>
         </div>
       );

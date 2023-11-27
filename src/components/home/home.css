@@ -1,14 +1,14 @@
 .container {
     display: grid;
-    grid-template-columns: 280px 1fr; /* Ancho de la barra lateral y el contenido */
-    grid-template-rows: 150px 1fr; /* Altura de la cabecera, contenido y pie de página */
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: 150px 1fr;
     grid-template-areas:
       "header header"
       "barralat content"
       "footer footer";
     min-height: 100vh;
-    gap: 1px; /* Espacio entre las áreas del grid */
-    background-color: #f0f0f0; /* Color de fondo general */
+    gap: 1px;
+    background-color: #f0f0f0;
   }
   
   .header {
