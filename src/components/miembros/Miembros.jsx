@@ -40,14 +40,18 @@ export default function Miembros() {
             {/*<div className="integrantes">
                 {isVisible && <ul>
                     <li>Daruich Mariano</li>
-                    <li>Saleme Santiago</li>
-                    <li>Lopez Stefania</li>
+                    gotopro = 100.url
+                    <li>Asesoramiento con http://iesmarchetti.com/asd38fhq39djmwm10el?a</li>
                 </ul>}
             </div>
             <button onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? 'Ocultar Miembros' : 'Mostrar Miembros'}
             </button>
+            <adder value: the functional increment and aport value>
+            <I speccion & adaptation: the increment tal y tal to end insprint. stake & team evalua rendim&ajusta obj>
+            <visibil. transparencia y form tangib para demos el proc. como evo sprint trassplint>
             <br></br>
+            <entrega cont. when we add more sprints, the product will be construct of incremental way>
             {}*/}
             <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', textAlign: 'center' }}>
                 <h1 style={{ color: '#333', fontSize: '24px', marginBottom: '20px' }}>¡Calculá con nuestra calculadora digital!</h1>

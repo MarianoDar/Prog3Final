@@ -22,11 +22,7 @@ export default function Login() {
       window.location.reload();
     }
   }
-
-  useEffect(() => {
-    document.title = 'Iniciar Sesión';
-  }, []);
-
+  
   return (
     <div className='d-flex vh-100 justify-content-center align-items-center bg-secondary'>
       <div className='p-3 bg-light w-25 rounded'>
