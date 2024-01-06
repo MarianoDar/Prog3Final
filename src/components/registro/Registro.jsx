@@ -1,63 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Alert } from 'react-bootstrap';
-import { useState } from 'react';
+import axios from 'axios';
 
-const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = React.useState(() => {
-    try {
-      const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.error(error);
-      return initialValue;
-    }
-  });
-
-  const setValue = (value) => {
-    try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  return [storedValue, setValue];
-};
+const API_BASE_URL = 'http://localhost:3001';
 
 export default function Registro() {
-  const [users, setUsers] = useLocalStorage('users', []);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const [alert, setAlert] = useState({ show: false, variant: '', message: '' });
-
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newUser = { email, password };
 
-    const isUserAlreadyRegistered = users.some((user) => user.email === newUser.email);
+    try {
+      const response = await axios.post(`${API_BASE_URL}/registro`, newUser);
 
-    if (isUserAlreadyRegistered) {
-      setAlert({ show: true, variant: 'danger', message: '¡El usuario ya está registrado!' });
-    } else {
-      setUsers([...users, newUser]);
+      if (response.data.success) {
+        setAlert({ show: true, variant: 'success', message: '¡Registro exitoso!' });
 
-      setEmail('');
-      setPassword('');
-
-      setAlert({ show: true, variant: 'success', message: '¡Registro exitoso!' });
-
-      setTimeout(() => {
-        navigate('/');
-      }, 3000);
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      } else {
+        setAlert({ show: true, variant: 'danger', message: '¡Error en el registro!' });
+      }
+    } catch (error) {
+      console.error('Error en la solicitud:', error);
+      setAlert({ show: true, variant: 'danger', message: '¡Error en el registro!' });
     }
   };
 
